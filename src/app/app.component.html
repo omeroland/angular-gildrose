@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-content>
+    <ng-container *ngFor="let brie of gildrose.items">
+      <mat-card>
+        <mat-card-title>{{brie.name}}</mat-card-title>
+        <mat-card-content>
+            <p>
+              <span [matBadge]="brie.sellIn" matBadgeOverlap="false" matBadgeSize="small">SellIn</span>
+            </p>
+            <p>
+              <span [matBadge]="brie.quality" matBadgeOverlap="false" matBadgeSize="small">Quality</span>
+            </p>
+        </mat-card-content>
+      </mat-card>
+      <br />
+    </ng-container>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button mat-raised-button color="primary" (click)="updateQuality()">
+      Update Quality
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<router-outlet></router-outlet>
